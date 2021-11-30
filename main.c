@@ -10,9 +10,9 @@ int main(){
         if(c=='A')
             collect_The_Mat();
         if(c=='B')
-            printf("its B\n");
+            is_There_A_Path();
         if(c=='C')
-            printf("its C\n");
+            shortest_Path();
         if(c=='D')
             unfinshed = 0;
     }
