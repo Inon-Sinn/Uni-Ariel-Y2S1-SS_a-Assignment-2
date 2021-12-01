@@ -2,8 +2,8 @@
 #include "my_mat.h"
 
 #define len 10
+
 int mat[len][len];
-int max=0;
 
 int min(int a, int b){
     if(a==0 && b==0)
@@ -17,22 +17,8 @@ int min(int a, int b){
     return a; 
 }
 
-void printMatrix(){
-    int i=0,j=0;
-    for(i=0;i<len;i++){
-        for(j=0;j<len;j++)
-            printf("%d,",mat[i][j]);
-        printf("\n");
-    }
-    printf("\n");
-}
-
-
-
-
-
 void collect_The_Mat(){
-    //Collect the matrix - works
+    //Build a 10x10 matrix iwith the given input - O(n)
     int i=0,j=0;
     for(i=0;i<len;i++){
         for(j=0;j<len;j++){
@@ -41,6 +27,7 @@ void collect_The_Mat(){
                 mat[i][j]=-1;
         }
     }
+    // Run the Floyd Warshall algorithm - O(n^3)
     int k,n,m;
     for(k=0;k<len;k++){
         for(n=0;n<len;n++){
@@ -64,6 +51,7 @@ void collect_The_Mat(){
 }
 
 void is_There_A_Path(){
+    //return true if there is a path false else - O(1)
     int i,j;
     scanf("%d%d",&i,&j);
     if(mat[i][j]!=-1 && mat[i][j]!=0){
@@ -73,6 +61,7 @@ void is_There_A_Path(){
 }
 
 void shortest_Path(){
+    // returns the shortest path between the given nodes - O(1)
     int i,j;
     scanf("%d%d",&i,&j);
     int result=mat[i][j];
