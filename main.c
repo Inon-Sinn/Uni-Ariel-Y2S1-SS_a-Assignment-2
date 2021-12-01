@@ -16,8 +16,6 @@ int main(){
        if(c=='D')
            unfinshed = 0;
    }
-    printf("finished the run\n");
-
-
+   
     return 0;
 }
